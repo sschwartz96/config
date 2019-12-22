@@ -1,7 +1,11 @@
+#
+# ~/.zshrc 
+#
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-### .zshrc stuff
+########## zsh stuff ########## 
 autoload -U colors && colors
 
 # auto complete
@@ -10,7 +14,6 @@ zstyle ":completion:*" menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # includes hidden files
-
 
 # Vi mode
 bindkey -v
@@ -36,43 +39,50 @@ _fix_cursor() {
 }
 precmd_functions+=(_fix_cursor)
 
+##########  END zsh stuff ########## 
 
-# change the default 
-export PS1='%n:%1d$ '
 
-# color the ls command
-alias ls='ls --color'
-
-# set xbps shorcuts
+########## aliases ########## 
+alias ls='ls --color=auto'
+alias vim='nvim'
+# arch-based
+alias pi='sudo pacman -S'
+alias pr='sudo pacman -R'
+alias pu='sudo pacman -Syu'
+alias pq='sudo pacman -Ss'
+# void 
 alias xi='sudo xbps-install -S'
 alias xu='sudo xbps-install -Su'
 alias xr='sudo xbps-remove'
 alias xq='sudo xbps-query -R -s' 
+########## END aliases ########## 
 
-# add ~/bin/ to path
+
+########## variables ########## 
+export PS1='%n:%1d$ '
+
+# path additions
 export PATH=$PATH:~/bin/
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:~/go/bin
+export PATH=$PATH:/usr/local/go/bin # golang install
+export PATH=$PATH:~/go/bin			# used for vim-go
 export PATH=$PATH:~/bin/dart-sass
 export PATH=$PATH:~/bin/robo3t/bin
 
-# set term
+
+# VARIABLES 
+export MYVIMRC="~/.config/nvim"
+export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
 #export TERM='xterm-256color'
 
-# set myvimrc
-export MYVIMRC="~/.config/nvim"
+########## END variables ########## 
 
-# go project vars
-export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
+
+# fzf
+#export FZF_DEFAULT_COMMAND="find -L" # finds hidden files too
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zsh syntax
+. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # cd into home
 cd ~
-
-# aliases 
-alias vim='nvim'
-
-# fzf bash 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# syntax
-. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
