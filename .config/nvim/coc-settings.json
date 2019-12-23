@@ -1,0 +1,33 @@
+{
+	"languageserver": {
+		"golang": {
+			"command": "gopls",
+			"initializationOptions": {"usePlaceholders": false},
+			"args": [],
+			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+			"filetypes": ["go"],
+			"settings": {
+				"usePlaceholders": true
+			}
+		},
+		"ccls": {
+			"command": "ccls",
+			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+			"rootPatterns": [".ccls-root", "compile_commands.json"],
+			"initializationOptions": {
+				"cache": {
+					"directory": ".ccls-cache"
+				}
+			}
+		}
+	},
+
+	"suggest.noselect": false,
+	"html.filetypes": [
+		"html",
+		"handlebars",
+		"gohtml"
+	],
+	"html.format.enable": true
+}
+
