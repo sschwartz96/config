@@ -1,0 +1,10 @@
+# set brightness
+if [ $1 -eq "1" ]
+then
+	xbacklight -set 1
+else
+	xbacklight $1
+fi
+
+# reload set_status.sh
+pkill -f "sleep 60"

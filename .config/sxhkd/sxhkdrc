@@ -1,0 +1,26 @@
+# Brightness
+
+XF86MonBrightnessUp
+	brightness +5%
+
+XF86MonBrightnessDown
+	brightness -5%
+
+ctrl + Down
+	brightness 1
+
+
+# Volume
+XF86AudioRaiseVolume
+	volume 5%+
+
+XF86AudioLowerVolume
+	volume 5%-
+
+
+# playerctl
+super + Down
+	playerctl pause
+
+super + Up
+	playerctl play
