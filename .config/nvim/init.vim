@@ -10,7 +10,7 @@ set statusline=%f
 " scroll offset
 set scrolloff=10
 set mouse=a
-set formatoptions-=cro "turn off next line comments
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "turn off next line comments
 
 " auto install vim-plug
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -56,7 +56,7 @@ call plug#end()
 set bg=dark
 colorscheme gruvbox
 set termguicolors
-hi Normal guibg=NONE
+"hi Normal guibg=NONE "for transparency, not needed anymore?
 
 " FZF config
 nnoremap <silent> <C-p> :FZF<CR>

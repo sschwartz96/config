@@ -1,3 +1,37 @@
+# 
+# bspc bindings
+#
+
+# exit bspc
+#super + shift + {q,r}
+#	bspc {quit 1, wm -r}
+#
+## start dmenu
+#super + p
+#	dmenu_run
+#
+## start terminal
+#super + shift + Return
+#	st
+#
+#
+#### application ###
+## close focused window
+#super + shift + c
+#	bspc node -c
+#
+## start browser
+#super + shift + w
+#	$BROWSER
+#
+## focus or send to the given desktop
+#super + {_,shift +}{1-9,0}
+#	bspc {desktop -f, node -d} '^{1-9,10}'
+
+#
+# END bspc bindings
+
+
 # Brightness
 
 XF86MonBrightnessUp

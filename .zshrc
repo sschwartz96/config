@@ -9,7 +9,8 @@
 autoload -U colors && colors
 
 # auto complete
-autoload -U compinit
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # corrects capitalization
 zstyle ":completion:*" menu select
 zmodload zsh/complist
 compinit
@@ -47,7 +48,7 @@ alias ls='ls --color=auto'
 alias vim='nvim'
 # arch-based
 alias pi='sudo pacman -S'
-alias pr='sudo pacman -R'
+alias pr='sudo pacman -Rs'
 alias pu='sudo pacman -Syu'
 alias pq='sudo pacman -Ss'
 # void 
@@ -73,6 +74,9 @@ export PATH=$PATH:~/bin/robo3t/bin
 export MYVIMRC="~/.config/nvim"
 export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
 #export TERM='xterm-256color'
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 ########## END variables ########## 
 
