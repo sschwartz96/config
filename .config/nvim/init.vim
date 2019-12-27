@@ -10,7 +10,8 @@ set statusline=%f
 " scroll offset
 set scrolloff=10
 set mouse=a
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "turn off next line comments
+"autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "turn off next line comments
+
 
 " auto install vim-plug
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -67,7 +68,8 @@ nnoremap <silent> <C-p> :FZF<CR>
 " disable GoDef gd mapping (handled by coc lsp client)
 let g:go_def_mapping_enabled = 0
 let g:go_doc_keywordprg_enabled = 0
-let g:go_fmt_autosave = 0
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
 
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -132,7 +134,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_next = '<cr><tab>'
 
 
 
@@ -235,7 +237,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
 " auto-format gocode and add missing imports on save
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+"autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " coc-pairs  to place cursor on its own line after <CR>
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"

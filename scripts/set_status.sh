@@ -8,7 +8,7 @@ while true; do
 	brightness=$(xbacklight -get | awk '{print int($1+0.05)}')
 	if [ -n "$brightness" ];
 	then
-		string="${string}  ${brightness}"
+		string="${string}  ${brightness}%"
 	fi
 
 
