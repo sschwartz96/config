@@ -14,12 +14,14 @@ while true; do
 
 	############### volume ##############
 
-	volume=$(amixer sget Master)
-	if [[ $? != 0 ]]; then
-		volume=$(amixer | grep 'Right:')
-	fi
-	volume=$(echo $volume | awk -F'[][]' '{ print $2 }')
-	volume=$(echo $volume | tr -d %)
+#	volume=$(amixer sget Master)
+#	if [[ $? != 0 ]]; then
+#		volume=$(amixer | grep 'Right:')
+#	fi
+#	volume=$(echo $volume | awk -F'[][]' '{ print $2 }')
+#	volume=$(echo $volume | tr -d %)
+
+	volume=$(pulsemixer --get-volume | awk '{print $1}')
 	volIcon=" "
 
 	if [ $volume -eq 0 ]

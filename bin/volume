@@ -1,6 +1,5 @@
-# First set volume
-amixer set Master $1
-amixer set PCM $1
+# Set volume
+pulsemixer --change-volume $1
 
 # Reload status
 pkill -f "sleep 60"

@@ -1,5 +1,6 @@
-# keyboard delay & rate
-xset r rate 200 60
+# mouse settings
+xinput --set-prop "Logitech G Pro Gaming Mouse" "libinput Accel Speed" -1
+xinput --set-prop "Logitech G Pro Gaming Mouse" "Coordinate Transformation Matrix" 1.900000, 0.000000, 0.000000, 0.000000, 1.900000, 0.000000, 0.000000, 0.000000, 1.000000
 
 # set trackpad settings
 synclient VertScrollDelta=-66	# natural scrolling
@@ -12,29 +13,25 @@ synclient PalmMinZ=50
 synclient MinSpeed=1.5
 synclient HorizTwoFingerScroll=1
 
-# set background
-feh --bg-fill ~/bgs/bg.jpg &
+# keyboard delay & rate
+xset r rate 200 60
 
-# set brightness
-xbacklight =10
-
-# start compton
-compton --config ~/.config/compton/compton.conf &
-
-# start redshift (blue light filter)
-redshift &
-
-# start simple x hot(k)ey daemon
-sxhkd &
-
-# swap esc and caps
+# swap esc and caps lock
 setxkbmap -option caps:swapescape
 
-# start syncing the status bar
+# start various programs in the background
+feh --bg-center pictures/backgrounds/sea-of-clouds.jpg &
+compton &
+redshift &
 ~/scripts/set_status.sh &
+sxhkd &
+pulseaudio &
+
+# fixed for large cursor
+xrdb -merge ~/.Xresources
 
 # turn off the screen after 100 seconds
-xset dpms 0 0 420
+xset dpms 0 0 100
 
 # start dbus for playerctl & spotify
 # test for an existing bus daemon, just to be safe
@@ -44,6 +41,6 @@ if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
   echo "D-Bus per-session daemon address is: $DBUS_SESSION_BUS_ADDRESS"
 fi
 
-# start display manager
+# start window manager
 exec dwm
-#exec bspwm
+#exec bspwm -c ~/.config/bspwm/bspwmrc

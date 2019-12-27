@@ -50,10 +50,10 @@ ctrl + Down
 
 # Volume
 XF86AudioRaiseVolume
-	volume 5%+
+	volume +5
 
 XF86AudioLowerVolume
-	volume 5%-
+	volume -5
 
 
 # playerctl
