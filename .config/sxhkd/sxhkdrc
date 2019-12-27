@@ -1,3 +1,7 @@
+# reload sxhkd config
+super + shift + r
+	killall -SIGUSR1 sxhkd 
+
 # 
 # bspc bindings
 #
@@ -58,3 +62,11 @@ super + Down
 
 super + Up
 	playerctl play
+
+###
+#
+# programs
+#
+###
+super + e
+	~/scripts/edit_config/edit_config.sh

@@ -9,6 +9,7 @@
 autoload -U colors && colors
 
 # auto complete
+setopt auto_cd
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # corrects capitalization
 zstyle ":completion:*" menu select
