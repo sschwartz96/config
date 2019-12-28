@@ -21,10 +21,10 @@ setxkbmap -option caps:swapescape
 
 # start various programs in the background
 feh --bg-center pictures/backgrounds/sea-of-clouds.jpg &
+pulseaudio &
 compton &
 redshift &
 sxhkd &
-pulseaudio &
 ~/scripts/set_status.sh &
 
 # fixed for large cursor
