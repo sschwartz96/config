@@ -23,9 +23,9 @@ setxkbmap -option caps:swapescape
 feh --bg-center pictures/backgrounds/sea-of-clouds.jpg &
 compton &
 redshift &
-~/scripts/set_status.sh &
 sxhkd &
 pulseaudio &
+~/scripts/set_status.sh &
 
 # fixed for large cursor
 xrdb -merge ~/.Xresources
