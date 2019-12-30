@@ -21,10 +21,11 @@ setxkbmap -option caps:swapescape
 
 # start various programs in the background
 feh --bg-center pictures/backgrounds/sea-of-clouds.jpg &
-pulseaudio &
+pulseaudio --start &
 compton &
 redshift &
-sxhkd &
+#sxhkd &
+sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
 ~/scripts/set_status.sh &
 
 # fixed for large cursor

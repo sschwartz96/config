@@ -58,13 +58,13 @@ XF86AudioLowerVolume
 
 # playerctl
 XF86AudioPlay
-	playerctl -a play-pause
+	media play-pause
 
 super + Down
-	playerctl -a pause
+	media pause
 
 super + Up
-	playerctl -a play
+	media play
 
 ###
 #

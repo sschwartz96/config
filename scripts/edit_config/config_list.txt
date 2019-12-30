@@ -1,5 +1,7 @@
-xinit	/home/sam/.xinitrc
-zsh		/home/sam/.zshrc
-nvim	/home/sam/.config/nvim/init.vim
-sxhkd	/home/sam/.config/sxhkd/sxhkdrc
-bspwm	/home/sam/.config/bspwm/bspwmrc
+config-list /home/sam/scripts/edit_config/config_list.txt
+xinit		/home/sam/.xinitrc
+zsh			/home/sam/.zshrc
+nvim		/home/sam/.config/nvim/init.vim
+sxhkd		/home/sam/.config/sxhkd/sxhkdrc
+bspwm		/home/sam/.config/bspwm/bspwmrc
+set-status	/home/sam/scripts/set_status.sh
