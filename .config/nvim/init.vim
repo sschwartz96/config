@@ -70,6 +70,7 @@ let g:go_def_mapping_enabled = 0
 let g:go_doc_keywordprg_enabled = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
+let g:go_fmt_fail_silently = 1
 
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -90,18 +91,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*phtml,*.gohtml,*.gohtmltmpl'
 
 
 
-""""""""""""""""""""""""""      ultisnips          """"""""""""""""""""""""" 
-
-" let g:UltiSnipsExpandTrigger = "<c-e>"
-" let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger = "<c-h>"
-
-
-
-
-
 """""""""""""""""""""""""""      COC CONFIG     ****************************
-
 
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -122,30 +112,6 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<cr><tab>'
-
-
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -246,3 +212,12 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 let g:coc_filetype_map = {
 	\ 'gohtmltmpl': 'html',
 	\ }
+
+" Make <tab> used for trigger completion
+inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : coc#on_enter
+"
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'

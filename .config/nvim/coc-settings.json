@@ -5,17 +5,8 @@
 			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
 			"filetypes": ["go"],
 			"initializationOptions": {
-				"usePlaceholders": true
-			}
-		},
-		"ccls": {
-			"command": "ccls",
-			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootPatterns": [".ccls-root", "compile_commands.json"],
-			"initializationOptions": {
-				"cache": {
-					"directory": ".ccls-cache"
-				}
+				"usePlaceholders": true,
+				"completeUnimported": true
 			}
 		}
 	},
