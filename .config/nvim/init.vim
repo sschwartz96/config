@@ -213,9 +213,20 @@ let g:coc_filetype_map = {
 	\ 'gohtmltmpl': 'html',
 	\ }
 
-" Make <tab> used for trigger completion
-inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : coc#on_enter
-"
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+" Map <c-space> to pop up autocomplete
+inoremap <silent><expr> <c-space> coc#refresh()
+
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<c-j>'
 
