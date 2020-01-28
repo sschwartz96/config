@@ -24,9 +24,13 @@ super + shift + r
 #super + shift + c
 #	bspc node -c
 #
+
 ## start browser
-#super + shift + w
-#	$BROWSER
+super + shift + w
+	chrome
+
+super + shift + m
+	clementine
 #
 ## focus or send to the given desktop
 #super + {_,shift +}{1-9,0}
