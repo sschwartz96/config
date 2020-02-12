@@ -27,7 +27,7 @@ super + shift + r
 
 ## start browser
 super + shift + w
-	chrome
+	$BROWSER
 
 super + shift + m
 	clementine
@@ -70,6 +70,18 @@ super + Down
 super + Up
 	media play
 
+super + Left
+	media previous
+
+super + Right 
+	media next
+
+ctrl + shift + 0
+	/home/sam/bin/switch_audio.sh 0
+
+ctrl + shift + 1
+	/home/sam/bin/switch_audio.sh 1
+
 ###
 #
 # programs
@@ -77,3 +89,9 @@ super + Up
 ###
 super + e
 	~/scripts/edit_config/edit_config.sh
+
+
+# screen shot select
+super + Print 
+	sleep 0.1;\
+	scrot -selection

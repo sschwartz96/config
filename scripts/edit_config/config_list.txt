@@ -5,3 +5,4 @@ nvim		/home/sam/.config/nvim/init.vim
 sxhkd		/home/sam/.config/sxhkd/sxhkdrc
 bspwm		/home/sam/.config/bspwm/bspwmrc
 set-status	/home/sam/scripts/set_status.sh
+compton		/home/sam/.config/compton/compton.conf

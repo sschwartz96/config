@@ -75,6 +75,7 @@ export PATH=$PATH:~/bin/robo3t/bin
 export MYVIMRC="~/.config/nvim"
 export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
 #export TERM='xterm-256color'
+export BROWSER="/usr/bin/brave"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

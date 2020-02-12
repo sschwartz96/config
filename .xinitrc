@@ -32,8 +32,7 @@ feh --bg-center pictures/backgrounds/sea-of-clouds.jpg &
 pulseaudio --start &
 compton &
 redshift &
-sxhkd &
-#sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
+sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
 ~/scripts/set_status.sh &
 numlockx on
 
