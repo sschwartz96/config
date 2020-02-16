@@ -13,6 +13,12 @@ synclient PalmMinZ=50
 synclient MinSpeed=1.5
 synclient HorizTwoFingerScroll=1
 
+# set brightness
+xbacklight -set 10
+
+# turn off trackpad when typing
+syndaemon -i 0.2 -K -t -d
+
 # start dbus for playerctl & spotify, must be started early to allow programs opened by sxhkd to be listed in dbus
 # test for an existing bus daemon, just to be safe
 if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
