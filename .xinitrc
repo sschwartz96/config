@@ -29,7 +29,8 @@ setxkbmap -option caps:swapescape
 
 # start various programs in the background
 feh --bg-center pictures/backgrounds/sea-of-clouds.jpg &
-pulseaudio --start &
+# need to kill pulseaudio first and restart so it recognizes all screens
+pkill pulseaudio && pulseaudio --start &
 compton &
 redshift &
 sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
