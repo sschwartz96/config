@@ -11,12 +11,13 @@ super + shift + r
 #	bspc {quit 1, wm -r}
 #
 ## start dmenu
-#super + p
-#	dmenu_run
+super + p
+	dmenu_run -fn "Fira Code:bold:pixelsize=18"
+
 #
-## start terminal
-#super + shift + Return
-#	st
+# start terminal
+super + shift + Return
+	st
 #
 #
 #### application ###
@@ -31,6 +32,10 @@ super + shift + w
 
 super + shift + m
 	clementine
+
+super + shift + v
+	openshot-qt
+
 #
 ## focus or send to the given desktop
 #super + {_,shift +}{1-9,0}

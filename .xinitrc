@@ -46,8 +46,8 @@ numlockx on
 # fixed for large cursor
 xrdb -merge ~/.Xresources
 
-# turn off the screen after 100 seconds
-xset dpms 0 0 100
+# turn off the screen after 300 seconds
+xset dpms 0 0 300
 
 
 # start window manager

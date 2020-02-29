@@ -70,11 +70,15 @@ export PATH=$PATH:~/go/bin			# used for vim-go
 export PATH=$PATH:~/bin/dart-sass
 export PATH=$PATH:~/bin/robo3t/bin
 export PATH=$PATH:~/bin/brave
+export PATH=$PATH:~/src/flutter/bin
+export PATH=$PATH:~/src/android-studio/bin
+export PATH=$PATH:~/src/android-studio/jre
 
 
 # VARIABLES 
 export MYVIMRC="~/.config/nvim"
 export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
+export GOREP=~/go/src/github.com/sschwartz96
 if [ "$HOST" = "sam-void" ] 
 then
 	export BROWSER="/home/sam/bin/brave/brave"
@@ -84,6 +88,15 @@ fi
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# for android-studio, prevent blank startup
+export _JAVA_AWT_WM_NONREPARENTING=1
+# for sdkmanager
+export JAVA_HOME=~/src/android-studio/jre
+# for debug on android device
+export NO_PROXY=localhost,127.0.0.1
+# for flutter web development
+export CHROME_EXECUTABLE=chrome
 
 ########## END variables ########## 
 
