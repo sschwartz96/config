@@ -17,6 +17,10 @@
 		"handlebars",
 		"gohtml"
 	],
-	"html.format.enable": true
+	"html.format.enable": true,
+
+	"coc.preferences.formatOnSaveFiletypes": [
+		"dart"
+	]
 }
 

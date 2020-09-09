@@ -1,9 +1,14 @@
 """"""""""""""""""    user config    """"""""""""""""
+" tab size
 set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+autocmd FileType dart setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set smartindent
+
 inoremap jk <Esc>
 set backupdir=~/vimtmp//,.
 set directory=~/vimtmp//,.
 set number
+set relativenumber
 " status
 set laststatus=2
 set statusline=%f
@@ -49,6 +54,9 @@ Plug 'tpope/vim-surround'
 
 " vim-smoothie
 Plug 'psliwka/vim-smoothie'
+
+" dart plugin
+Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()
 

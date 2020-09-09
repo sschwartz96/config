@@ -1,0 +1,7 @@
+configuration {
+	matching: "fuzzy";
+	sorting-method: "fzf";
+	theme: "gruvbox-dark";
+	font: "Fira Code 12";
+	sort: true;
+}

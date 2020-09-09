@@ -1,6 +1,6 @@
 # mouse settings
-xinput --set-prop "Logitech G Pro Gaming Mouse" "libinput Accel Speed" -1
-xinput --set-prop "Logitech G Pro Gaming Mouse" "Coordinate Transformation Matrix" 2.000000, 0.000000, 0.000000, 0.000000, 2.000000, 0.000000, 0.000000, 0.000000, 1.000000
+xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Accel Speed" -1
+xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "Coordinate Transformation Matrix" 2.100000, 0.000000, 0.000000, 0.000000, 2.100000, 0.000000, 0.000000, 0.000000, 1.000000
 
 # set trackpad settings
 synclient VertScrollDelta=-66	# natural scrolling
@@ -42,19 +42,20 @@ xmodmap ~/.key_maps
 feh --bg-center pictures/backgrounds/sea-of-clouds.jpg &
 # need to kill pulseaudio first and restart so it recognizes all screens
 pkill pulseaudio && pulseaudio --start &
-compton &
+picom &
 redshift &
-sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
-~/scripts/set_status.sh &
-numlockx on
+ntfd & # weather for polybar
+#sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
+#~/scripts/set_status.sh &
+#numlockx on
 
 # fixed for large cursor
 xrdb -merge ~/.Xresources
 
-# turn off the screen after 300 seconds
-xset dpms 0 0 300
+# turn off the screen after x seconds
+xset dpms 0 0 600
 
 
 # start window manager
-exec dwm
-#exec bspwm -c ~/.config/bspwm/bspwmrc
+#exec dwm
+exec bspwm -c ~/.config/bspwm/bspwmrc

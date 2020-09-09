@@ -1,0 +1,28 @@
+#! /bin/sh
+
+# start sxhkd
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# set up multi-monitor
+# (have to change this in order to use with polybar)
+bspc monitor %DP-2.8 -n bottom
+#bspc monitor DP-5 -n top
+
+bspc monitor bottom -d 1 2 3
+bspc monitor DP-5 -d 7 8 9
+bspc monitor bottom -s DP-5
+
+#bspc monitor %DP-2.8 -d 1 2 3
+#bspc monitor DP-5 -d 4 5 6
+#bspc monitor %DP-2.8 -s DP-5
+
+# focus with mouse hover
+#bspc config focus_follows_pointer true
+
+# start polybars
+polybar bottom & 
+polybar top & 
+
+# padding for polybar
+bspc config -m bottom top_padding 30
+bspc config -m DP-5 top_padding 30

@@ -57,6 +57,8 @@ alias xi='sudo xbps-install -S'
 alias xu='sudo xbps-install -Su'
 alias xr='sudo xbps-remove'
 alias xq='sudo xbps-query -R -s' 
+# alacritty
+alias ala='alacritty'
 ########## END aliases ########## 
 
 
@@ -65,7 +67,6 @@ export PS1='%n:%1d$ '
 
 # path additions
 export PATH=$PATH:~/bin/
-export PATH=$PATH:/usr/local/go/bin # golang install
 export PATH=$PATH:~/go/bin			# used for vim-go
 export PATH=$PATH:~/bin/dart-sass
 export PATH=$PATH:~/bin/robo3t/bin
@@ -73,18 +74,18 @@ export PATH=$PATH:~/bin/brave
 export PATH=$PATH:~/src/flutter/bin
 export PATH=$PATH:~/src/android-studio/bin
 export PATH=$PATH:~/src/android-studio/jre
+#for python-pip
+export PATH=$PATH:/home/sam/.local/bin
 
 
 # VARIABLES 
 export MYVIMRC="~/.config/nvim"
 export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
 export GOREP=~/go/src/github.com/sschwartz96
-if [ "$HOST" = "sam-void" ] 
-then
-	export BROWSER="/home/sam/bin/brave/brave"
-else
-	export BROWSER="/usr/bin/brave"
-fi
+export SYNCAPOD=~/go/src/github.com/sschwartz96/syncapod
+export BROWSER="/home/sam/bin/chrome"
+export TERM="alacritty"
+export EDITOR="nvim"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
