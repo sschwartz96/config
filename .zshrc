@@ -41,6 +41,19 @@ _fix_cursor() {
 }
 precmd_functions+=(_fix_cursor)
 
+# auto suggestions
+source ~/github.com/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+#history
+HISTSIZE=5000               #How many lines of history to keep in memory
+HISTFILE=~/.zsh_history     #Where to save history to disk
+SAVEHIST=5000               #Number of history entries to save to disk
+#HISTDUP=erase               #Erase duplicates in the history file
+setopt    appendhistory     #Append history to the history file (no overwriting)
+setopt    sharehistory      #Share history across terminals
+setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+
 ##########  END zsh stuff ########## 
 
 
@@ -59,6 +72,14 @@ alias xr='sudo xbps-remove'
 alias xq='sudo xbps-query -R -s' 
 # alacritty
 alias ala='alacritty'
+# lsd
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+# richgo 
+alias go='richgo'
 ########## END aliases ########## 
 
 
@@ -82,9 +103,12 @@ export PATH=$PATH:/home/sam/.local/bin
 export MYVIMRC="~/.config/nvim"
 export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
 export GOREP=~/go/src/github.com/sschwartz96
-export SYNCAPOD=~/go/src/github.com/sschwartz96/syncapod
+export GO111MODULE=on
+#export GOPATH=~/go
+export SYNCAPOD_OLD=~/go/src/github.com/sschwartz96/syncapod
+export SYNCAPOD=~/projects/syncapod
 export BROWSER="/home/sam/bin/chrome"
-export TERM="alacritty"
+export TERM="xterm-256color"
 export EDITOR="nvim"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -101,13 +125,20 @@ export CHROME_EXECUTABLE=chrome
 
 ########## END variables ########## 
 
-
 # fzf
 #export FZF_DEFAULT_COMMAND="find -L" # finds hidden files too
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zsh syntax
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# docker completion
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
 # cd into home
 cd ~
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/sam/go/bin/bitcomplete bit

@@ -53,8 +53,11 @@ ntfd & # weather for polybar
 xrdb -merge ~/.Xresources
 
 # turn off the screen after x seconds
-xset dpms 0 0 600
+xset dpms 0 0 6000
 
+# screensaver
+xscreensaver &
+caffeine &
 
 # start window manager
 #exec dwm

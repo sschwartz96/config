@@ -1,4 +1,5 @@
 configuration {
+	monitor: "-1";
 	matching: "fuzzy";
 	sorting-method: "fzf";
 	theme: "gruvbox-dark";

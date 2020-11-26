@@ -5,6 +5,7 @@ autocmd FileType dart setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set smartindent
 
 inoremap jk <Esc>
+set nowrap
 set backupdir=~/vimtmp//,.
 set directory=~/vimtmp//,.
 set number
@@ -17,8 +18,6 @@ set scrolloff=10
 set mouse=a
 "autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "turn off next line comments
 
-
-" auto install vim-plug
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -29,19 +28,20 @@ endif
 " Load Plugs
 call plug#begin()
 
-" gruvbox colorscheme
+" gruvbox colorscheme and visuals
 Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
 
 " lsp client
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" vim-go
+" vim-go (other go specific)
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'buoto/gotests-vim'
 
 " Fuzzy Finders
-" Plug 'kien/ctrlp.vim'
-" Plug '~/github.com/fzf'
-Plug 'junegunn/fzf', { 'dir': '~/github.com/fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/github.com/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " NERDtree
 Plug 'scrooloose/nerdtree'
@@ -58,17 +58,56 @@ Plug 'psliwka/vim-smoothie'
 " dart plugin
 Plug 'dart-lang/dart-vim-plugin'
 
+" git
+Plug 'tpope/vim-fugitive'
+
+" focus
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
 call plug#end()
 
-
+"""""""""""""""""""""""""""      visuals      ************************
 " colorscheme config
 set bg=dark
 colorscheme gruvbox
 set termguicolors
+autocmd VimEnter * Limelight
+set noshowmode " removes insert at the bottom
+let g:lightline = {
+	\ 'colorscheme': 'gruvbox',
+	\ 'active': {
+    \	'left': [ [ 'mode', 'paste' ],
+    \			[ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \	},
+    \ 'component_function': {
+    \	'gitbranch': 'FugitiveHead'
+    \ },
+    \ }
+
+"Goyo 
+function! s:goyo_enter()
+  set noshowmode
+  set noshowcmd
+  set linebreak
+  CocDisable
+endfunction
+
+function! s:goyo_leave()
+  set showmode
+  set showcmd
+  set linebreak
+  CocEnable
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 "hi Normal guibg=NONE "for transparency, not needed anymore?
 
 " FZF config
 nnoremap <silent> <C-p> :FZF<CR>
+
 
 
 """""""""""""""""""""""""""      vim-go config      ************************
