@@ -39,7 +39,8 @@ xmodmap ~/.key_maps
 
 
 # start various programs in the background
-feh --bg-center pictures/backgrounds/sea-of-clouds.jpg &
+feh --bg-center pictures/background.jpg &
+feh-blur --blur 4 --darken 0 -d
 # need to kill pulseaudio first and restart so it recognizes all screens
 pkill pulseaudio && pulseaudio --start &
 picom &
