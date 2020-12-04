@@ -56,7 +56,7 @@ font-5 = Weather Icons:size=10;0
 
 modules-left = bspwm xwindow
 modules-center = pulseaudio music music-prev music-play music-next
-modules-right = filesystem memory cpu eth temperature date
+modules-right = battery filesystem memory cpu eth temperature date
 
 tray-position = right
 tray-padding = 2
@@ -384,7 +384,7 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
@@ -400,13 +400,13 @@ animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
+animation-charging-framerate = 1500
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+animation-discharging-framerate = 1500
 
 [module/temperature]
 type = internal/temperature
