@@ -21,7 +21,6 @@ _comp_options+=(globdots) # includes hidden files
 bindkey -v
 export KEYTIMEOUT=1 # changes the lag time switching mode
 # Change cursor shape for different vi modes.
-# Change cursor shape for different vi modes.
 function zle-keymap-select {
 	if [[ ${KEYMAP} == vicmd ]] ||
 		[[ $1 = 'block' ]]; then
@@ -43,7 +42,7 @@ precmd_functions+=(_fix_cursor)
 
 # auto suggestions
 source ~/github.com/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_STRATEGY=(history)
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 #history
 HISTSIZE=5000               #How many lines of history to keep in memory
@@ -58,7 +57,6 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 
 
 ########## aliases ########## 
-alias ls='ls --color=auto'
 alias vim='nvim'
 # arch-based
 alias pi='sudo pacman -S'
@@ -74,12 +72,14 @@ alias xq='sudo xbps-query -R -s'
 alias ala='alacritty'
 # lsd
 alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
+alias l='lsd -l'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
 # richgo 
 alias go='richgo'
+# etc
+alias file-explorer='thunar'
 ########## END aliases ########## 
 
 
@@ -100,7 +100,8 @@ export PATH=$PATH:/home/sam/.local/bin
 
 
 # VARIABLES 
-export MYVIMRC="~/.config/nvim"
+export MYVIMRC="~/.config/nvim/init.vim"
+export MYCOCRC="~/.config/nvim/coc-settings.json"
 export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
 export GOREP=~/go/src/github.com/sschwartz96
 export GO111MODULE=on
@@ -138,6 +139,10 @@ autoload -Uz compinit && compinit -i
 # cd into home
 cd ~
 
+# do laptop specific stuff
+if [ "$HOST" = "sam-lapt" ]; then
+	export WINIT_HIDPI_FACTOR=1.0
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 autoload -U +X bashcompinit && bashcompinit

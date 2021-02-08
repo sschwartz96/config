@@ -58,12 +58,27 @@ Plug 'psliwka/vim-smoothie'
 " dart plugin
 Plug 'dart-lang/dart-vim-plugin'
 
+""" javascript stuff
+
+" svelte
+Plug 'evanleck/vim-svelte'
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+
+" react
+Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'mattn/emmet-vim', { 'for': ['javascript', 'jsx', 'html', 'css'] }
+
 " git
 Plug 'tpope/vim-fugitive'
 
 " focus
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
+" ledger
+Plug 'ledger/vim-ledger'
 
 call plug#end()
 
@@ -279,3 +294,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 "let g:coc_snippet_prev = '<c-k>'
+
+" emmet
+autocmd BufNewFile,BufRead *.js :set filetype=javascript.jsx
