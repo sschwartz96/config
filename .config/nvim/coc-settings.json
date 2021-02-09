@@ -21,6 +21,10 @@
 
 	"coc.preferences.formatOnSaveFiletypes": [
 		"dart"
-	]
+	],
+
+	"emmet.includedLanguages": {
+		"javascript": "javascriptreact"
+	}
 }
 
