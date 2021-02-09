@@ -65,6 +65,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+" svelte / javascript
+Plug 'evanleck/vim-svelte'
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+
+
 call plug#end()
 
 """""""""""""""""""""""""""      visuals      ************************

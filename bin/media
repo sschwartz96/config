@@ -1,2 +1,2 @@
 #!/bin/zsh
-playerctl $1
+playerctl --player=spotify,%any $1

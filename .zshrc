@@ -43,7 +43,7 @@ precmd_functions+=(_fix_cursor)
 
 # auto suggestions
 source ~/github.com/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_STRATEGY=(history)
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 #history
 HISTSIZE=5000               #How many lines of history to keep in memory
@@ -91,7 +91,7 @@ export PATH=$PATH:~/bin/
 export PATH=$PATH:~/go/bin			# used for vim-go
 export PATH=$PATH:~/bin/dart-sass
 export PATH=$PATH:~/bin/robo3t/bin
-export PATH=$PATH:~/bin/brave
+export PATH=$PATH:~/bin/discord
 export PATH=$PATH:~/src/flutter/bin
 export PATH=$PATH:~/src/android-studio/bin
 export PATH=$PATH:~/src/android-studio/jre
@@ -137,7 +137,6 @@ autoload -Uz compinit && compinit -i
 
 # cd into home
 cd ~
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 autoload -U +X bashcompinit && bashcompinit
