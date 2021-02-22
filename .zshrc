@@ -58,6 +58,7 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 
 ########## aliases ########## 
 alias vim='nvim'
+alias tmux='tmux -u'
 # arch-based
 alias pi='sudo pacman -S'
 alias pr='sudo pacman -Rs'
@@ -128,7 +129,7 @@ export CHROME_EXECUTABLE=chrome
 
 # fzf
 #export FZF_DEFAULT_COMMAND="find -L" # finds hidden files too
-export FZF_DEFAULT_COMMAND="rg --files --hidden --iglob '!node_modules !.git'"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --iglob '!node_modules' --iglob '!.git'"
 
 # zsh syntax
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -138,7 +139,7 @@ fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
 # cd into home
-cd ~
+#cd ~
 
 # do laptop specific stuff
 if [ "$HOST" = "sam-lapt" ]; then

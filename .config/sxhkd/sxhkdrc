@@ -1,6 +1,6 @@
 # reload sxhkd config
 ctrl + shift + r
-	killall -SIGUSR1 sxhkd 
+	killall -SIGUSR1 sxhkd; sleep 1
 
 # sleep
 super + shift + s
@@ -156,6 +156,10 @@ super + m
 # start rofi
 super + p
 	rofi -show run
+
+# start rofi-calc
+super + c
+	rofi -show calc -modi calc -no-show-match -no-sort
 
 # start terminal
 super + shift + Return

@@ -12,19 +12,14 @@
 	},
 
 	"suggest.noselect": false,
-	"html.filetypes": [
-		"html",
-		"handlebars",
-		"gohtml"
-	],
-	"html.format.enable": true,
-
 	"coc.preferences.formatOnSaveFiletypes": [
-		"dart"
+		"dart",
+		"svelte",
+		"javascript",
+		"typescript"
 	],
-
-	"emmet.includedLanguages": {
-		"javascript": "javascriptreact"
-	}
+	"coc.preferences.formatOnType": true,
+	"svelte.plugin.html.tagComplete.enable": false,
+	"prettier.singleQuote": true
 }
 

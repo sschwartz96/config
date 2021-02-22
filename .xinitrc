@@ -48,7 +48,7 @@ redshift &
 ntfd & # weather for polybar
 #sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
 #~/scripts/set_status.sh &
-#numlockx on
+numlockx on
 
 # fixed for large cursor
 xrdb -merge ~/.Xresources

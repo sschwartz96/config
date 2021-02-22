@@ -2,9 +2,12 @@
 " tab size
 set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 autocmd FileType dart setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType svelte setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set smartindent
 
 inoremap jk <Esc>
+set noswapfile
 set nowrap
 set backupdir=~/vimtmp//,.
 set directory=~/vimtmp//,.
@@ -14,7 +17,7 @@ set relativenumber
 set laststatus=2
 set statusline=%f
 " scroll offset
-set scrolloff=10
+set scrolloff=7
 set mouse=a
 "autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "turn off next line comments
 
@@ -29,8 +32,18 @@ endif
 call plug#begin()
 
 " gruvbox colorscheme and visuals
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
+Plug 'lifepillar/vim-gruvbox8'
+Plug 'arcticicestudio/nord-vim'
+Plug 'jnurmine/Zenburn'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'huyvohcmc/atlas.vim/'
+Plug 'axvr/photon.vim'
+Plug '/home/sam/projects/photon-lightline'
+"Plug 'Jorengarenar/vim-darkness'
+
 Plug 'itchyny/lightline.vim'
+Plug 'ryanoasis/vim-devicons'
 
 " lsp client
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -39,18 +52,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'buoto/gotests-vim'
 
-" Fuzzy Finders
-" Plug 'junegunn/fzf', { 'dir': '~/github.com/fzf', 'do': './install --all' }
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Fuzzy Finder
+Plug 'junegunn/fzf', { 'dir': '~/github.com/fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " NERDtree
 Plug 'scrooloose/nerdtree'
 
-" closetags.vim
-"Plug 'alvan/vim-closetag'
-
-" surround.vim
+Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
+"Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
 
 " vim-smoothie
 Plug 'psliwka/vim-smoothie'
@@ -85,20 +97,30 @@ call plug#end()
 """""""""""""""""""""""""""      visuals      ************************
 " colorscheme config
 set bg=dark
-colorscheme gruvbox
-set termguicolors
-autocmd VimEnter * Limelight
+"colorscheme gruvbox
+" set termguicolors
+" autocmd VimEnter * Limelight " start limelight
 set noshowmode " removes insert at the bottom
+" colorscheme nord
+" colorscheme solarized
+" colorscheme darkness
+" colorscheme atlas
+colorscheme photon
+" let g:lightline = {}
+" let g:lightline.colorscheme = 'photon'
 let g:lightline = {
-	\ 'colorscheme': 'gruvbox',
-	\ 'active': {
-    \	'left': [ [ 'mode', 'paste' ],
-    \			[ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-    \	},
-    \ 'component_function': {
-    \	'gitbranch': 'FugitiveHead'
-    \ },
-    \ }
+		\ 'colorscheme': 'photon_lightline',
+		\ 'active': {
+		\	'left': [ [ 'mode', 'paste' ],
+		\			[ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+		\	},
+		\ 'component_function': {
+		\	'gitbranch': 'FugitiveHead'
+		\ },
+		\ }
+"
+" NERDtree
+:let g:NERDTreeWinSize=20
 
 "Goyo 
 function! s:goyo_enter()
@@ -149,8 +171,9 @@ au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 
 
 """"""""""""""""""""""""""      vim-closetag          """"""""""""""""""""""""" 
-let g:closetag_filenames = '*.html,*.xhtml,*phtml,*.gohtml,*.gohtmltmpl'
-
+let g:closetag_filenames = '*.html,*.xhtml,*phtml,*.gohtml,*.gohtmltmpl,*.svelte'
+let g:closetag_xhtml_filenames = '*.svelte'
+let g:closetag_xhtml_filetypes = 'svelte'
 
 
 """""""""""""""""""""""""""      COC CONFIG     ****************************
@@ -268,7 +291,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " coc-pairs  to place cursor on its own line after <CR>
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " map gohtml to html for html support
 let g:coc_filetype_map = {
@@ -296,4 +319,4 @@ inoremap <silent><expr> <c-space> coc#refresh()
 "let g:coc_snippet_prev = '<c-k>'
 
 " emmet
-autocmd BufNewFile,BufRead *.js :set filetype=javascript.jsx
+"autocmd BufNewFile,BufRead *.js :set filetype=javascript.jsx

@@ -28,6 +28,7 @@ underline = #fabd2f
 
 [bar/laptop]
 monitor = eDP1
+dpi = 108
 width = 100%
 height = 27
 radius = 6.0
@@ -56,8 +57,7 @@ font-5 = Weather Icons:size=10;0
 
 modules-left = bspwm xwindow
 modules-center = pulseaudio music music-prev music-play music-next
-modules-right = battery filesystem memory cpu eth temperature date
-
+modules-right = xbacklight battery filesystem memory cpu eth temperature date
 tray-position = right
 tray-padding = 2
 
@@ -240,7 +240,7 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}

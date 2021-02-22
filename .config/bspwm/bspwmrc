@@ -6,7 +6,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # if on the laptop
 if [ "$HOST" = "sam-void" ] || [ "$HOST" = "sam-lap" ]
 then
-	bspc monitor eDP1 -d 1 2 3 7
+	bspc monitor eDP1 -d 1 2 3 7 8 9
 	polybar laptop &
 	bspc config top_padding 30
 else
