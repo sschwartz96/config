@@ -75,6 +75,10 @@ super + Return {
 super + f
 	bspc node --state \~fullscreen
 
+# toggle floating or tiled mode
+super + d
+	bspc node -t \~floating
+
 ## increase 40 pixels 
 #super + ctrl + shift + {j,k,h,l}
 #	bspc node --resize {bottom 0 40,top 0 -40,left -40 0,right 40 0}

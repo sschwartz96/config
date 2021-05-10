@@ -3,6 +3,7 @@
 set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 autocmd FileType dart setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType svelte setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set smartindent
 
@@ -68,7 +69,7 @@ Plug 'tpope/vim-commentary'
 Plug 'psliwka/vim-smoothie'
 
 " dart plugin
-Plug 'dart-lang/dart-vim-plugin'
+" Plug 'dart-lang/dart-vim-plugin'
 
 """ javascript stuff
 
