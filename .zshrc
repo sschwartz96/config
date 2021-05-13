@@ -93,9 +93,9 @@ export PATH=$PATH:~/go/bin			# used for vim-go
 export PATH=$PATH:~/bin/dart-sass
 export PATH=$PATH:~/bin/robo3t/bin
 export PATH=$PATH:~/bin/discord
-export PATH=$PATH:~/src/flutter/bin
-export PATH=$PATH:~/src/android-studio/bin
-export PATH=$PATH:~/src/android-studio/jre
+export PATH=$PATH:~/github.com/flutter/bin
+export PATH=$PATH:~/bin/android-studio-dir/bin
+export PATH=$PATH:~/bin/android-studio-dir/jre
 #for python-pip
 export PATH=$PATH:/home/sam/.local/bin
 
@@ -109,7 +109,7 @@ export GO111MODULE=on
 #export GOPATH=~/go
 export SYNCAPOD_OLD=~/go/src/github.com/sschwartz96/syncapod
 export SYNCAPOD=~/projects/syncapod
-export BROWSER="/home/sam/bin/chrome"
+export BROWSER="/home/sam/bin/brave-browser"
 export TERM="xterm-256color"
 export EDITOR="nvim"
 
@@ -119,11 +119,13 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # for android-studio, prevent blank startup
 export _JAVA_AWT_WM_NONREPARENTING=1
 # for sdkmanager
-export JAVA_HOME=~/src/android-studio/jre
+export JAVA_HOME=~/bin/android-studio-dir/jre
 # for debug on android device
 export NO_PROXY=localhost,127.0.0.1
 # for flutter web development
-export CHROME_EXECUTABLE=chrome
+export CHROME_EXECUTABLE=google-chrome-stable
+# for flutter linux development
+export CMAKE_CXX_COMPILER=/usr/bin/g++
 
 ########## END variables ########## 
 

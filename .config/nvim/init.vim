@@ -69,7 +69,7 @@ Plug 'tpope/vim-commentary'
 Plug 'psliwka/vim-smoothie'
 
 " dart plugin
-Plug 'dart-lang/dart-vim-plugin'
+" Plug 'dart-lang/dart-vim-plugin'
 
 """ javascript stuff
 
