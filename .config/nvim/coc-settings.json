@@ -20,6 +20,14 @@
 	],
 	"coc.preferences.formatOnType": true,
 	"svelte.plugin.html.tagComplete.enable": false,
-	"prettier.singleQuote": true
+	"prettier.singleQuote": true,
+	"pairs.enableCharacters": [
+		"(",
+		"[",
+		"{",
+		"'",
+		"\"",
+		"`"
+	]
 }
 

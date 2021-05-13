@@ -72,11 +72,11 @@ alias xq='sudo xbps-query -R -s'
 # alacritty
 alias ala='alacritty'
 # lsd
-alias ls='lsd'
-alias l='lsd -l'
-alias la='lsd -a'
-alias lla='lsd -la'
-alias lt='lsd --tree'
+alias ls='lsd --group-dirs first'
+alias l='lsd -l --group-dirs first'
+alias la='lsd -a --group-dirs first'
+alias lla='lsd -la --group-dirs first'
+alias lt='lsd --tree --group-dirs first'
 # richgo 
 alias go='richgo'
 # etc

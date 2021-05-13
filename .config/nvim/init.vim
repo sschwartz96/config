@@ -3,6 +3,7 @@
 set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 autocmd FileType dart setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType svelte setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set smartindent
 
@@ -291,7 +292,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " coc-pairs  to place cursor on its own line after <CR>
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " map gohtml to html for html support
 let g:coc_filetype_map = {

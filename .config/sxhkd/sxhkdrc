@@ -167,4 +167,4 @@ super + shift + Return
 
 # screen shot select
 super + Print 
-	sleep 0.25 && scrot -selection
+	sleep 0.25 && scrot -selection -s ~/temp.png && xclip ~/temp.png && rm ~/temp.png
