@@ -35,7 +35,7 @@ xset r rate 200 60
 setxkbmap -option caps:swapescape
 
 # alt + hjkl {left down up left}
-xmodmap ~/.key_maps
+#xmodmap ~/.key_maps
 
 
 # start various programs in the background
