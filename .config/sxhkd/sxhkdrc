@@ -28,17 +28,6 @@ super + shift + m
 super + shift + v
 	kdenlive
 
-alt + h
-	xdotool key right
-
-alt + j
-	xdotool key down
-
-alt + k
-	xdotool key up
-
-alt + l
-	xdotool key left
 ###
 #
 # bspwm
