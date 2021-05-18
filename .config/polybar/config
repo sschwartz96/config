@@ -49,7 +49,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Fira Code:pixelsize=10;1
-font-1 = Noto Sans:pixelsize=12;1
+font-1 = Noto Color Emoji:scale=12;1
 font-2 = Symbola:pixelsize=12;1
 font-3 = siji:pixelsize=12;1
 font-4 = FontAwesome:pixelsize=10;1
@@ -90,7 +90,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Fira Code:pixelsize=10;1
-font-1 = Noto Sans:pixelsize=12;1
+font-1 = Noto Color Emoji:scale=12;1
 font-2 = Symbola:pixelsize=12;1
 font-3 = siji:pixelsize=12;1
 font-4 = FontAwesome:pixelsize=10;1
@@ -131,9 +131,9 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Fira Code:pixelsize=10;1
-font-1 = Noto Sans:pixelsize=12;1
-font-2 = Symbola:pixelsize=12;1
-font-3 = siji:pixelsize=12;1
+font-1 = siji:pixelsize=12;1
+font-2 = Noto Color Emoji:scale=12;1
+font-3 = Symbola:pixelsize=12;1
 font-4 = FontAwesome:pixelsize=10;1
 font-5 = Weather Icons:size=10;0
 
@@ -468,22 +468,23 @@ type = custom/script
 interval = 2
 tail = true
 format-prefix = "🎶 "
+label-maxlen=60
 format = <label>
 exec = ~/.config/polybar/scripts/media.sh
 
 [module/music-prev]
 type = custom/text
-content = ""
+content = "⏪"
 click-left = media previous
 
 [module/music-play]
 type = custom/text
-content = "⏯️"
+content = "⏯"
 click-left = media play-pause
 
 [module/music-next]
 type = custom/text
-content = ""
+content = "⏩"
 click-left = media next
 
 [settings]
