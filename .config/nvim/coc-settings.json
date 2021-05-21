@@ -19,6 +19,7 @@
 		"typescript"
 	],
 	"coc.preferences.formatOnType": true,
+	"flutter.provider.enableSnippet": true,
 	"svelte.plugin.html.tagComplete.enable": false,
 	"prettier.singleQuote": true,
 	"pairs.enableCharacters": [

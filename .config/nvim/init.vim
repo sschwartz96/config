@@ -69,7 +69,8 @@ Plug 'tpope/vim-commentary'
 Plug 'psliwka/vim-smoothie'
 
 " dart plugin
-" Plug 'dart-lang/dart-vim-plugin'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'tiagofumo/dart-vim-flutter-layout' "for indention
 
 """ javascript stuff
 
@@ -321,3 +322,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " emmet
 "autocmd BufNewFile,BufRead *.js :set filetype=javascript.jsx
+
+
+" dart & flutter
+let g:dart_style_guide = 2
