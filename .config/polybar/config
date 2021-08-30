@@ -198,9 +198,13 @@ label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %name%
+label-empty = 
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 0
+
+;label-empty = %name%
+;label-empty-foreground = ${colors.foreground-alt}
+;label-empty-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -469,6 +473,8 @@ interval = 2
 tail = true
 format-prefix = "🎶 "
 format = <label>
+label-maxlen = 30
+label-ellipsis = true
 exec = ~/.config/polybar/scripts/media.sh
 
 [module/music-prev]

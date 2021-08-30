@@ -6,7 +6,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # if on the laptop
 if [ "$HOST" = "sam-void" ] || [ "$HOST" = "sam-lap" ]
 then
-	bspc monitor eDP1 -d 1 2 3 7 8 9
+	bspc monitor eDP1 -d 1 2 3 4 7 8 9 0
 	polybar laptop &
 	bspc config top_padding 30
 else
@@ -16,8 +16,8 @@ else
 	bspc monitor %DP-2.8 -n bottom
 	#bspc monitor DP-5 -n top
 
-	bspc monitor bottom -d 1 2 3
-	bspc monitor DP-5 -d 7 8 9
+	bspc monitor bottom -d 1 2 3 4
+	bspc monitor DP-5 -d 7 8 9 0
 	bspc monitor bottom -s DP-5
 
 	# start polybars

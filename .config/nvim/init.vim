@@ -5,7 +5,6 @@ autocmd FileType dart setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType svelte setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-set smartindent
 
 inoremap jk <Esc>
 set noswapfile
@@ -122,7 +121,7 @@ let g:lightline = {
 		\ }
 "
 " NERDtree
-:let g:NERDTreeWinSize=20
+:let g:NERDTreeWinSize=26
 
 "Goyo 
 function! s:goyo_enter()
@@ -315,10 +314,10 @@ inoremap <silent><expr> <Tab>
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-"let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-"let g:coc_snippet_prev = '<c-k>'
+let g:coc_snippet_prev = '<c-k>'
 
 " emmet
 "autocmd BufNewFile,BufRead *.js :set filetype=javascript.jsx
@@ -326,3 +325,11 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " dart & flutter
 let g:dart_style_guide = 2
+
+" Moving Text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
