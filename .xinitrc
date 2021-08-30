@@ -14,7 +14,7 @@ synclient MinSpeed=1.5
 synclient HorizTwoFingerScroll=1
 
 # set brightness
-xbacklight -set 10
+xbacklight -set 25
 
 # turn off trackpad when typing
 syndaemon -i 0.2 -K -t -d
@@ -44,7 +44,7 @@ feh-blur --blur 4 --darken 0 -d
 # need to kill pulseaudio first and restart so it recognizes all screens
 pkill pulseaudio && pulseaudio --start &
 picom &
-redshift &
+redshift -l 36.15:-97.38 &
 ntfd & # weather for polybar
 #sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
 #~/scripts/set_status.sh &

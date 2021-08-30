@@ -103,13 +103,13 @@ export PATH=$PATH:/home/sam/.local/bin
 # VARIABLES 
 export MYVIMRC="~/.config/nvim/init.vim"
 export MYCOCRC="~/.config/nvim/coc-settings.json"
-export MOPS=~/go/src/github.com/sschwartz96/m-ops.org/
+export MOPS=~/projects/m-ops.org
 export GOREP=~/go/src/github.com/sschwartz96
 export GO111MODULE=on
 #export GOPATH=~/go
 export SYNCAPOD_OLD=~/go/src/github.com/sschwartz96/syncapod
 export SYNCAPOD=~/projects/syncapod
-export BROWSER="/home/sam/bin/brave-browser"
+export BROWSER="/home/sam/bin/chrome"
 export TERM="xterm-256color"
 export EDITOR="nvim"
 

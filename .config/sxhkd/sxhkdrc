@@ -1,10 +1,14 @@
 # reload sxhkd config
 ctrl + shift + r
-	killall -SIGUSR1 sxhkd; sleep 1
+	pkill sxhkd; sleep 1; sxhkd & disown
+	#killall -SIGUSR1 sxhkd; sleep 1
 
 # sleep
-super + shift + s
+super + ctrl + shift + s
 	snooze
+
+super + shift + s
+	sleep 0.25 && scrot -selection '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
 # 
 # bspc bindings
@@ -20,7 +24,11 @@ super + shift + c
 
 ## start browser
 super + shift + w
-	$BROWSER
+	$BROWSER & \
+	sleep 6.0; \
+	bspc node focused --state pseudo_tiled; \
+	sleep 0.2; \
+	bspc node focused--state tiled
 
 super + shift + m
 	clementine
@@ -35,15 +43,15 @@ super + shift + v
 ###
 
 # desktop focus
-super + {1-3}
-	bspc desktop -f {1-3}
+super + {0-4}
+	bspc desktop -f {0-4}
 
 super + {7-9}
 	bspc desktop -f {7-9}
 
 # desktop move node
-super + shift + {1-3,7-9}
-	bspc node -d {1-3,7-9} --follow 
+super + shift + {0-4,7-9}
+	bspc node -d {0-4,7-9} --follow 
 
 # focus the node in the given direction
 super + {h,j,k,l}
@@ -124,6 +132,9 @@ XF86AudioLowerVolume
 XF86AudioPlay
 	media play-pause
 
+super + m
+	media play-pause
+
 super + Down
 	media pause
 
@@ -152,10 +163,6 @@ ctrl + shift + 1
 super + e
 	~/scripts/edit_config/edit_config.sh
 
-# media player
-super + m
-	MellowPlayer
-
 # start rofi
 super + p
 	rofi -show run
@@ -171,3 +178,7 @@ super + shift + Return
 # screen shot select
 super + Print 
 	sleep 0.25 && scrot -selection -s ~/temp.png && xclip ~/temp.png && rm ~/temp.png
+
+# toggle thunderbird
+super + t
+	birdtray -t
